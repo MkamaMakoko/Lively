@@ -2,6 +2,11 @@ FROM gitpod/workspace-full
 
 USER gitpod
 
+RUN sudo apt-get update -y
+RUN sudo apt-get upgrade -y
+RUN sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
+
+
 # Install Flutter
 RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_3.19.4-stable.tar.xz && \
     tar xf flutter_linux_3.19.4-stable.tar.xz -C /workspace && \
