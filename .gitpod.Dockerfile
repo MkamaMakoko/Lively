@@ -26,8 +26,8 @@ RUN wget https://dl.google.com/android/repository/commandlinetools-linux-1107670
 # Add Android SDK to PATH
 # ENV PATH="$PATH:/workspace/android/cmdline-tools/tools/bin"
 
-RUN export ANDROID_HOME /workspace/android/sdk
-RUN export PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+ENV ANDROID_HOME /workspace/android/sdk
+ENV PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # Accept Android SDK licenses
 # RUN yes | sdkmanager --licenses
