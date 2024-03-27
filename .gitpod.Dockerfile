@@ -18,20 +18,23 @@ ENV PATH="$PATH:/workspace/flutter/bin"
 RUN flutter upgrade
 
 # Install Android SDK
-RUN wget https://dl.google.com/android/repository/commandlinetools-linux-7302050_latest.zip && \
+RUN wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip && \
     mkdir -p /workspace/android/cmdline-tools && \
-    unzip commandlinetools-linux-7302050_latest.zip -d /workspace/android/cmdline-tools && \
-    rm commandlinetools-linux-7302050_latest.zip
+    unzip commandlinetools-linux-11076708_latest.zip -d /workspace/android/cmdline-tools && \
+    rm commandlinetools-linux-11076708_latest.zip
 
 # Add Android SDK to PATH
-ENV PATH="$PATH:/workspace/android/cmdline-tools/tools/bin"
+# ENV PATH="$PATH:/workspace/android/cmdline-tools/tools/bin"
+
+export ANDROID_HOME /workspace/android/sdk
+export PATH $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # Accept Android SDK licenses
-RUN yes | sdkmanager --licenses
+# RUN yes | sdkmanager --licenses
 
 # Update Android SDK packages
 RUN sdkmanager --update && \
-    sdkmanager "platform-tools" "platforms;android-30"
+    sdkmanager "platform-tools" "platforms;android-33"
 
 # Install JDK
 RUN sudo apt-get update && \
