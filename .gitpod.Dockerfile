@@ -8,9 +8,9 @@ RUN sudo apt-get install -y curl git unzip xz-utils zip libglu1-mesa
 
 
 # Install Flutter
-RUN wget https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_3.19.0-stable.tar.xz && \
-    tar xf flutter_linux_3.19.0-stable.tar.xz -C /workspace && \
-    rm flutter_linux_3.19.0-stable.tar.xz
+RUN wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.4-stable.tar.xz && \
+    tar xf flutter_linux_3.19.4-stable.tar.xz -C /workspace && \
+    rm flutter_linux_3.19.4-stable.tar.xz
 
 # Add Flutter to PATH
 ENV PATH="$PATH:/workspace/flutter/bin"
