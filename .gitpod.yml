@@ -1,0 +1,20 @@
+image: gitpod/workspace-full:latest
+
+tasks:
+  - name: Flutter Setup
+    init: |
+      echo 'Setting up Flutter...'
+      brew install --cask flutter
+      echo 'Done setting up Flutter.'
+    command: |
+      echo 'Starting Flutter doctor...'
+      flutter doctor
+
+ports:
+  - port: 8080
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - Dart-Code.flutter
+    - Dart-Code.dart-code
