@@ -25,7 +25,7 @@ tasks:
       tar xf flutter_linux_3.19.5-stable.tar.xz -C /workspace
       rm flutter_linux_3.19.5-stable.tar.xz
       echo 'export PATH="/workspace/flutter/bin:$PATH"' >> ~/.bashrc
-      source ~/.bashrc
+      source ~/.bashrc && flutter config --android-sdk "$ANDROID_SDK_ROOT"
       echo 'Done setting up Flutter.'
       
     command: |
