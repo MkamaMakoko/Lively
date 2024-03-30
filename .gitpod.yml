@@ -10,9 +10,7 @@ tasks:
       rm commandlinetools-linux-11076708_latest.zip
       echo 'export PATH="/workspace/android-sdk/cmdline-tools/tools/bin:$PATH"' >> ~/.bashrc
       echo 'export ANDROID_SDK_ROOT="/workspace/android-sdk"' >> ~/.bashrc
-      source ~/.bashrc
-      yes | sdkmanager --licenses
-      sdkmanager "platform-tools" "platforms;android-33" "build-tools;34.0.0"
+      source ~/.bashrc && yes | sdkmanager --licenses && sdkmanager "platform-tools" "platforms;android-33" "build-tools;34.0.0"
       echo 'Done setting up Android SDK.'
       
       echo 'Setting up Flutter...'
