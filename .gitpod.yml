@@ -4,7 +4,11 @@ tasks:
   - name: Flutter Setup
     init: |
       echo 'Setting up Flutter...'
-      brew install --cask flutter
+      wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.19.5-stable.tar.xz
+      tar xf flutter_linux_3.19.5-stable.tar.xz
+      rm flutter_linux_3.19.5-stable.tar.xz
+      echo 'export PATH="/workspace/flutter/bin:$PATH"' >> ~/.bashrc
+      source ~/.bashrc
       echo 'Done setting up Flutter.'
     command: |
       echo 'Starting Flutter doctor...'
