@@ -8,8 +8,8 @@ tasks:
       mkdir -p /workspace/android-sdk/cmdline-tools
       unzip commandlinetools-linux-11076708_latest.zip -d /workspace/android-sdk/cmdline-tools
       rm commandlinetools-linux-11076708_latest.zip
-      echo 'export PATH="/workspace/android-sdk/cmdline-tools/tools/bin:$PATH"' >> ~/.bashrc
       echo 'export ANDROID_SDK_ROOT="/workspace/android-sdk"' >> ~/.bashrc
+      echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin:$ANDROID_SDK_ROOT/platform-tools"' >> ~/.bashrc
       source ~/.bashrc && yes | sdkmanager --licenses && sdkmanager "platform-tools" "platforms;android-33" "build-tools;34.0.0"
       echo 'Done setting up Android SDK.'
       
