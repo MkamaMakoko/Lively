@@ -3,13 +3,6 @@ image: gitpod/workspace-full:latest
 tasks:
   - name: Android SDK and Flutter Setup
     init: |
-      echo 'Setting up Java...'
-      sudo apt-get update && sudo apt-get install -y openjdk-17-jdk
-      echo 'export JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"' >> ~/.bashrc
-      echo 'export PATH="$JAVA_HOME/bin:$PATH"' >> ~/.bashrc
-      source ~/.bashrc
-      echo 'Done setting up Java.'
-      
       echo 'Setting up Android SDK...'
       wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
       mkdir -p /workspace/android-sdk/cmdline-tools
@@ -30,7 +23,7 @@ tasks:
       
     command: |
       echo 'Starting Flutter doctor...'
-      flutter doctor
+      source ~/.bashrc && flutter doctor
 
 ports:
   - port: 8080
