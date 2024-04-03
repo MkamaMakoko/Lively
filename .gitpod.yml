@@ -12,11 +12,11 @@ tasks:
       
       echo 'Setting up Android SDK...'
       wget https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip
-      mkdir -p /workspace/android-sdk/cmdline-tools
-      unzip commandlinetools-linux-11076708_latest.zip -d /workspace/android-sdk/cmdline-tools
+      mkdir -p /workspace/android-sdk/cmdline-tools/latest
+      unzip commandlinetools-linux-11076708_latest.zip -d /workspace/android-sdk/cmdline-tools/latest
       rm commandlinetools-linux-11076708_latest.zip
       echo 'export ANDROID_SDK_ROOT="/workspace/android-sdk"' >> ~/.bashrc
-      echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools/bin:$ANDROID_SDK_ROOT/platform-tools"' >> ~/.bashrc
+      echo 'export PATH="$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_SDK_ROOT/platform-tools"' >> ~/.bashrc
       source ~/.bashrc && yes | sdkmanager --licenses && sdkmanager "platform-tools" "platforms;android-33" "build-tools;34.0.0"
       echo 'Done setting up Android SDK.'
       
